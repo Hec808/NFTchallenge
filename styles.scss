@@ -1,0 +1,163 @@
+@import url("https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600&display=swap");
+
+$primary: hsl(215, 51%, 70%);
+$secondary: hsl(178, 100%, 50%);
+
+$mainBG: hsl(217, 54%, 11%);
+$cardBG: hsl(216, 50%, 16%);
+$line: hsl(215, 50%, 27%);
+$time: #8bacd9;
+$white: hsl(0, 0%, 100%);
+
+$paragraphSize: 18px;
+
+$font-stack: "Outfit", sans-serif;
+
+body {
+  width: 100vw;
+  height: 100vh;
+  margin: 0;
+  background-color: $mainBG;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+#card {
+  display: flex;
+  flex-direction: column;
+  width: 300px;
+  padding: 1.3rem;
+  color: $white;
+  background-color: $cardBG;
+  border-radius: 12px;
+  font-family: $font-stack;
+  margin: auto;
+
+  &__img {
+    width: 100%;
+    height: 300px;
+    position: relative;
+    &__img {
+      width: 100%;
+      border-radius: 12px;
+    }
+
+    &__hover {
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      height: 100%;
+      width: 100%;
+      opacity: 0;
+      transition: 0.5s ease;
+      background-color: $secondary;
+      border-radius: 12px;
+
+      &__eye {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        -webkit-transform: translate(-50%, -50%);
+        -ms-transform: translate(-50%, -50%);
+        transform: translate(-50%, -50%);
+        transition: 0.5s ease;
+        opacity: 0;
+      }
+    }
+
+    &:hover &__hover {
+      opacity: 0.5;
+      cursor: pointer;
+    }
+
+    &:hover &__hover__eye {
+      opacity: 1;
+    }
+  }
+
+  &__header {
+    font-weight: 600;
+
+    &:hover {
+      color: $secondary;
+      cursor: pointer;
+      transition: 0.5s ease;
+    }
+  }
+
+  &__desc {
+    color: $time;
+    font-size: $paragraphSize;
+    font-weight: 300;
+  }
+
+  &__info {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    margin-top: 1rem;
+    font-weight: 400;
+
+    &__crypto {
+      width: 40%;
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      color: $secondary;
+
+      &__eth {
+        margin-right: 5px;
+      }
+    }
+
+    &__time {
+      width: 40%;
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      color: $time;
+
+      &__clock {
+        margin-right: 5px;
+      }
+    }
+  }
+
+  &__line {
+    &__hr {
+      border: 1px solid $line;
+    }
+  }
+
+  &__author {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: center;
+
+    &__img {
+      height: 2rem;
+      width: auto;
+      border: 1px solid $white;
+      border-radius: 50%;
+      margin-right: 1rem;
+    }
+
+    &__p {
+      color: $time;
+
+      &__span {
+        color: $white;
+
+        &:hover {
+          color: $secondary;
+          cursor: pointer;
+          transition: 0.5s ease;
+        }
+      }
+    }
+  }
+}
